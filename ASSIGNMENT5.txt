@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    //Define Patient's identification number, and their location
+    int patientNumbers[] = {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119,
+    120, 121, 122, 123, 124, 125, 126, 127, 128, 129,130 };
+    char *locations[] = {"Room 1", "Garden", "Therapy Room", "Cafeteria", "Room 2", "Library", "Dining Hall",
+    "Reception Area", "Room 3", "Counseling Room", "Medication Room", "Rehabilitation Room", "Room 4", "Exercise Room",
+    "Playground", "Playground", "Not in hospital, MISSING!", "Pharmacy", "Washroom", "Canteen", "Cafeteria",
+    "Seminar Hall", "Seminar Hall","Art Room", "Kitchen", "Gym", "Lobby", "Room 6", "Room 7", "Room 8"};
+    int numPatients = 30;
+
+    int patientNumber, found = 0;
+    printf("THE HEALING PLACE\n");
+    //Take the ID number from the user
+    printf("\nEnter the patient's identification number to find their location: ");
+    scanf("%d", &patientNumber);
+
+    // Search for the identification  number
+    for (int i = 0; i < numPatients; i++) {
+        if (patientNumbers[i] == patientNumber) {
+            printf("Patient Number: %d\n", patientNumbers[i]);
+            printf("Location: %s\n", locations[i]);
+            found = 1;
+            break;
+        }
+    }
+
+    // If patient not found, display an Alert message
+    if (!found) {
+        printf("Patient with Number %d not found.\n", patientNumber);
+    }
+
+    return 0;
+}
